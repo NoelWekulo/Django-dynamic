@@ -1,0 +1,136 @@
+{% extends "layout.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<body class="portfolio-details-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+
+      <a href="{% url 'business:index' %}" class="logo d-flex align-items-center me-auto">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 class="sitename">NoelNet</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="{% url 'business:index' %}" class="active">Home</a></li>
+          <li><a href="{% url 'business:about' %}">About</a></li>
+          <li><a href="#{% url 'business:service_details' %}">Services</a></li>
+          <li><a href="{% url 'business:portfolio_details' %}">Portfolio</a></li>
+          <li><a href="{% url 'business:team' %}">Team</a></li>
+          <li><a href="{% url 'business:pricing' %}">Pricing</a></li>
+          <li class="dropdown"><a href="{% url 'business:blog' %}"><span>Blog</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Latest</a></li>
+              
+              <li><a href="#">Trending</a></li>
+              <li><a href="#">Health and wellness</a></li>
+              <li><a href="#">Beauty</a></li>
+            </ul>
+          </li>
+          <li><a href="{% url 'business:contact' %}">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="{% url 'business:about' %}">Get Started</a>
+
+    </div>
+  </header>
+
+
+  <main class="main">
+
+    <!-- Page Title -->
+    <div class="page-title" data-aos="fade">
+      <div class="container">
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Portfolio Details</li>
+          </ol>
+        </nav>
+        <h1>Portfolio Details</h1>
+      </div>
+    </div><!-- End Page Title -->
+
+    <!-- Portfolio Details Section -->
+    <section id="portfolio-details" class="portfolio-details section">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-8">
+            <div class="portfolio-details-slider swiper init-swiper">
+
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  }
+                }
+              </script>
+
+              <div class="swiper-wrapper align-items-center">
+
+                <div class="swiper-slide">
+                  <img src="{% static 'assets/img/portfolio/app-1.jpg' %}" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="{% static 'assets/img/portfolio/product-1.jpg' %}" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="{% static 'assets/img/portfolio/branding-1.jpg' %}" alt="">
+                </div>
+
+                <div class="swiper-slide">
+                  <img src="{% static 'assets/img/portfolio/books-1.jpg' %}" alt="">
+                </div>
+
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
+              <h3>Project information</h3>
+              <ul>
+                <li><strong>Category</strong>: Web design</li>
+                <li><strong>Client</strong>: ASU Company</li>
+                <li><strong>Project date</strong>: 01 March, 2020</li>
+                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+              </ul>
+            </div>
+            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
+              <h2>Exercitationem repudiandae officiis neque suscipit</h2>
+              <p>
+                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Portfolio Details Section -->
+
+  </main>
+
+  {% endblock %}
