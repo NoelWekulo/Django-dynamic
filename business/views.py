@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import TeamMember, HeroSection, Service, Portfolio, ContactInfo, Inquiry
+from .models import TeamMember, HeroSection, Service, Portfolio, ContactInfo, Inquiry,Testimonial
 from .forms import InquiryForm
 
 def index(request):
@@ -9,6 +9,7 @@ def index(request):
     services = Service.objects.all()
     portfolios = Portfolio.objects.all()
     contact_info = ContactInfo.objects.first()
+    testimonials = Testimonial.objects.all()
 
     # Initialize the contact form and handle submissions
     form_message = ''
@@ -29,14 +30,16 @@ def index(request):
         'hero_section': hero_section,
         'services': services,
         'portfolios': portfolios,
+        'testimonials': testimonials,
         'contact_info': contact_info,
+    
         'inquiries': Inquiry.objects.all(),
         'form': form,
         'form_message': form_message,
         'page_title': 'Home'
     }
 
-    return render(request, 'index.html', context)
+    return render(request, 'index.html','portfolio_details.html', 'sevice_details.html', context)
 
 def portfolio_details(request):
     return render(request, 'portfolio_details.html')

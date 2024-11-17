@@ -8,7 +8,7 @@ app_name = 'business'
 urlpatterns = [
 
     path('', views.index, name='index'),
-    path('portfolio_details', views.index, name='portfolio_details'),
-    path('service_details', views.index, name='service_details'),
+    path('portfolio_details', views.portfolio_details, name='portfolio_details'),
+    path('service_details', views.service_details, name='service_details'),
    
 ]
